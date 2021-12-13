@@ -32,7 +32,9 @@ class InputHandler {
     return commands;
   }
 
-  Future<Diagnostics> getDiagnostics() async {}
+  Future<Diagnostics> getDiagnostics() async {
+    return Diagnostics(await input.readAsLines());
+  }
 
   Future<List<String>> read() async {
     return await input.readAsLines();
