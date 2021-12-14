@@ -1,6 +1,11 @@
+import 'dart:io';
+
+import 'input_handler.dart';
 import 'sonar_utilities.dart';
 
-void main(List<String> args) {
+void main(List<String> args) async {
+  final handler = InputHandler(File('lib/inputs/day1.txt'));
+  final input = (await handler.read()).map((e) => int.parse(e)).toList();
   print(measurementsLargerThanPrevious(input));
   print(measurementsLargerThanPrevious(input, slidingWindow: 3));
 }
